@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "985103872154",
+    "project_id": "jet-dogue",
+    "storage_bucket": "jet-dogue.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985103872154:android:061cea8a26a93072e0ef23",
+        "android_client_info": {
+          "package_name": "com.example.jet_dogue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985103872154-sj6eqoc4omfim212tgtdgllc3p7ao3pe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW56MfnqSYAic6XLByrrgCut0R895G7TU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985103872154-sj6eqoc4omfim212tgtdgllc3p7ao3pe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "985103872154-cmoe3tontcn6m0stpj4oef02p9g56h1u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.jetDogue"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

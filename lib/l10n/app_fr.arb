@@ -1,0 +1,54 @@
+{
+    "@@locale": "fr",
+    "calendar": "Calendrier",
+    "news": "Actualites",
+    "seeMore": "Voir plus",
+    "standings": "Classement",
+    "position": "{position, plural, =1 {1er} other {{position}e}}",
+    "@position": {
+        "placeholders": {
+            "position": {
+                "type": "num"
+            }
+        }
+    },
+    "matchDay": "Journée {day}",
+    "@matchDay": {
+        "placeholders": {
+            "day": {
+                "type": "num"
+            }
+        }
+    },
+    "result": "{result, select, win {Victoire} draw {Nul} lose {Défaite} other {?}}",
+    "@result": {
+        "placeholders": {
+            "result": {}
+        }
+    },
+    "countdownLive": "Live",
+    "countdownDays": "{count, plural, one {{count} jour} other {{count} jours}}",
+    "@countdownDays": {
+        "placeholders": {
+            "count": {
+                "type": "num"
+            }
+        }
+    },
+    "countdownHours": "{count, plural, one {{count} heure} other {{count} heures}}",
+    "@countdownHours": {
+        "placeholders": {
+            "count": {
+                "type": "num"
+            }
+        }
+    },
+    "countdownMinutes": "{count, plural, one {{count} min} other {{count} mins}}",
+    "@countdownMinutes": {
+        "placeholders": {
+            "count": {
+                "type": "num"
+            }
+        }
+    }
+}
