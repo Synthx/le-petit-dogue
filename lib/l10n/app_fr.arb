@@ -4,18 +4,11 @@
     "news": "Actualites",
     "seeMore": "Voir plus",
     "standings": "Classement",
+    "upcomingMatch": "Prochain match",
     "position": "{position, plural, =1 {1er} other {{position}e}}",
     "@position": {
         "placeholders": {
             "position": {
-                "type": "num"
-            }
-        }
-    },
-    "matchDay": "Journée {day}",
-    "@matchDay": {
-        "placeholders": {
-            "day": {
                 "type": "num"
             }
         }
@@ -26,8 +19,7 @@
             "result": {}
         }
     },
-    "countdownLive": "Live",
-    "countdownDays": "{count, plural, one {{count} jour} other {{count} jours}}",
+    "countdownDays": "{count, plural, one {jour} other {jours}}",
     "@countdownDays": {
         "placeholders": {
             "count": {
@@ -35,7 +27,7 @@
             }
         }
     },
-    "countdownHours": "{count, plural, one {{count} heure} other {{count} heures}}",
+    "countdownHours": "{count, plural, one {heure} other {heures}}",
     "@countdownHours": {
         "placeholders": {
             "count": {
@@ -43,8 +35,16 @@
             }
         }
     },
-    "countdownMinutes": "{count, plural, one {{count} min} other {{count} mins}}",
+    "countdownMinutes": "{count, plural, one {min} other {mins}}",
     "@countdownMinutes": {
+        "placeholders": {
+            "count": {
+                "type": "num"
+            }
+        }
+    },
+    "countdownSeconds": "{count, plural, one {sec} other {secs}}",
+    "@countdownSeconds": {
         "placeholders": {
             "count": {
                 "type": "num"

@@ -5,31 +5,27 @@ import 'package:jet_dogue/data/data.dart';
 import 'package:jet_dogue/theme/theme.dart';
 import 'package:jet_dogue/widget/widget.dart';
 
-class MatchCard extends StatelessWidget {
+class SmallMatchCard extends StatelessWidget {
+  final Color backgroundColor;
   final Match match;
 
-  const MatchCard({
+  const SmallMatchCard({
     required this.match,
+    this.backgroundColor = Colors.transparent,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: context.secondaryColor,
-      padding: const EdgeInsets.all(20),
+      color: backgroundColor,
+      padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          CountDown(
-            date: match.date,
-          ),
-          const SizedBox(
-            height: kSpacer,
-          ),
           RichText(
             text: TextSpan(
               style: context.textTheme.titleMedium?.copyWith(
-                color: Colors.white,
+                color: context.secondaryColor,
                 fontWeight: FontWeight.w600,
                 fontSize: 14,
               ),
@@ -71,23 +67,29 @@ class MatchCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: kSpacer),
-          Column(
-            children: [
-              Text(
-                match.date.format(DateFormat.HOUR_MINUTE),
-                textAlign: TextAlign.center,
-                style: context.textTheme.displayMedium?.copyWith(
-                  color: Colors.white,
-                ),
+          RichText(
+            text: TextSpan(
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: context.secondaryColor,
+                fontSize: 14,
               ),
-              Text(
-                match.date.format(DateFormat.MONTH_WEEKDAY_DAY),
-                textAlign: TextAlign.center,
-                style: context.textTheme.bodySmall?.copyWith(
-                  color: Colors.white,
+              children: [
+                TextSpan(
+                  text: match.date.format(DateFormat.ABBR_MONTH_WEEKDAY_DAY),
                 ),
-              ),
-            ],
+                if (match.status == MatchStatus.timed)
+                  TextSpan(
+                    text: ' · ',
+                    style: TextStyle(
+                      color: context.primaryColor,
+                    ),
+                  ),
+                if (match.status == MatchStatus.timed)
+                  TextSpan(
+                    text: match.date.format(DateFormat.HOUR_MINUTE),
+                  ),
+              ],
+            ),
           ),
         ],
       ),

@@ -6,15 +6,48 @@ final themeData = ThemeData(
   useMaterial3: true,
   fontFamily: 'Termina',
   brightness: Brightness.light,
+  splashFactory: NoSplash.splashFactory,
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor: kBackgroundColor,
+  cardColor: kCardColor,
   colorScheme: ColorScheme.fromSwatch().copyWith(
     brightness: Brightness.light,
     primary: kPrimaryColor,
     secondary: kSecondaryColor,
     background: kBackgroundColor,
   ),
-  dividerColor: kDividerColor,
+  dividerColor: kPrimaryColor,
+  appBarTheme: const AppBarTheme(
+    centerTitle: false,
+    color: kBackgroundColor,
+    titleSpacing: 0,
+  ),
+  tabBarTheme: const TabBarTheme(
+    labelColor: kSecondaryColor,
+    labelStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+    ),
+    unselectedLabelColor: kSecondaryColor,
+    unselectedLabelStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+    ),
+    indicator: UnderlineTabIndicator(
+      borderRadius: BorderRadius.zero,
+      borderSide: BorderSide(
+        color: kPrimaryColor,
+        width: 2,
+      ),
+    ),
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: kBackgroundColor,
+    selectedItemColor: kPrimaryColor,
+    unselectedItemColor: kSecondaryColor,
+    showSelectedLabels: false,
+    showUnselectedLabels: false,
+  ),
   iconTheme: const IconThemeData(
     color: kBodyTextColor,
   ),

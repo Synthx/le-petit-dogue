@@ -7,7 +7,7 @@ class TeamCrest extends StatelessWidget {
 
   const TeamCrest({
     required this.team,
-    this.size = 32,
+    this.size = 60,
     super.key,
   });
 
