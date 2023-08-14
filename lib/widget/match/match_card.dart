@@ -15,17 +15,23 @@ class MatchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final isRunning = match.date.isBefore(now);
+
     return Container(
       color: context.secondaryColor,
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          CountDown(
-            date: match.date,
-          ),
-          const SizedBox(
-            height: kSpacer,
-          ),
+          if (!isRunning)
+            Padding(
+              padding: const EdgeInsets.only(
+                bottom: kSpacer,
+              ),
+              child: CountDown(
+                date: match.date,
+              ),
+            ),
           RichText(
             text: TextSpan(
               style: context.textTheme.titleMedium?.copyWith(
@@ -56,15 +62,14 @@ class MatchCard extends StatelessWidget {
               TeamCrest(
                 team: match.home,
               ),
-              const SizedBox(width: kSpacer),
-              SizedBox(
-                width: 30,
-                child: Divider(
-                  thickness: 2,
-                  color: context.primaryColor,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: kSpacer,
+                ),
+                child: MatchScoreIndicator(
+                  score: match.score,
                 ),
               ),
-              const SizedBox(width: kSpacer),
               TeamCrest(
                 team: match.away,
               ),

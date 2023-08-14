@@ -19,6 +19,7 @@ class HomeStore extends Cubit<HomeState> {
     final matches = dataStore.state.featuredTeamMatches;
     final nextMatches = matches.where((e) => !e.isFinished).take(2).toList();
     final lastMatches = matches.where((e) => e.isFinished).take(5).toList();
+    lastMatches.sort((a, b) => b.date.compareTo(a.date));
     emit(state.copyWith(
       nextMatches: nextMatches,
       lastMatches: lastMatches,
@@ -31,6 +32,8 @@ class HomeStore extends Cubit<HomeState> {
         standings = standings.sublist(0, 4);
       } else if (teamIndex > standings.length - 3) {
         standings = standings.sublist(standings.length - 4);
+      } else {
+        standings = standings.sublist(teamIndex - 2, teamIndex + 2);
       }
     } else {
       standings = [];

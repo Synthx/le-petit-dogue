@@ -52,15 +52,14 @@ class SmallMatchCard extends StatelessWidget {
               TeamCrest(
                 team: match.home,
               ),
-              const SizedBox(width: kSpacer),
-              SizedBox(
-                width: 30,
-                child: Divider(
-                  thickness: 2,
-                  color: context.primaryColor,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: kSpacer,
+                ),
+                child: MatchScoreIndicator(
+                  score: match.score,
                 ),
               ),
-              const SizedBox(width: kSpacer),
               TeamCrest(
                 team: match.away,
               ),
@@ -77,14 +76,14 @@ class SmallMatchCard extends StatelessWidget {
                 TextSpan(
                   text: match.date.format(DateFormat.ABBR_MONTH_WEEKDAY_DAY),
                 ),
-                if (match.status == MatchStatus.timed)
+                if (match.status != MatchStatus.scheduled)
                   TextSpan(
                     text: ' · ',
                     style: TextStyle(
                       color: context.primaryColor,
                     ),
                   ),
-                if (match.status == MatchStatus.timed)
+                if (match.status != MatchStatus.scheduled)
                   TextSpan(
                     text: match.date.format(DateFormat.HOUR_MINUTE),
                   ),

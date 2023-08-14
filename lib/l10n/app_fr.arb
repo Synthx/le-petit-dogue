@@ -1,9 +1,11 @@
 {
     "@@locale": "fr",
     "calendar": "Calendrier",
+    "results": "Résultats",
     "news": "Actualites",
     "seeMore": "Voir plus",
     "standings": "Classement",
+    "lastMatch": "Dernier match",
     "upcomingMatch": "Prochain match",
     "position": "{position, plural, =1 {1er} other {{position}e}}",
     "@position": {

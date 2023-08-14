@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'calendar_app_bar.dart';
+import 'results/results.dart';
 import 'upcoming/upcoming.dart';
 
 class CalendarScreen extends StatelessWidget {
@@ -11,12 +12,14 @@ class CalendarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const DefaultTabController(
-      length: 1,
+      length: 2,
       child: Scaffold(
         appBar: CalendarAppBar(),
         body: TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             UpcomingMatchesScreen(),
+            ResultsScreen(),
           ],
         ),
       ),

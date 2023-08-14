@@ -13,7 +13,7 @@ class UpcomingMatchesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocSelector<UpcomingMatchesStore, UpcomingMatchesState,
         List<Match>>(
-      selector: (state) => state.matches,
+      selector: (state) => state.matches.sublist(1),
       builder: (context, matches) {
         return SliverList.separated(
           itemCount: matches.length,

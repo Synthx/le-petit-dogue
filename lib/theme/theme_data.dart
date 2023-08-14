@@ -40,6 +40,8 @@ final themeData = ThemeData(
         width: 2,
       ),
     ),
+    indicatorColor: kPrimaryColor,
+    indicatorSize: TabBarIndicatorSize.label,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: kBackgroundColor,
