@@ -35,6 +35,11 @@ class MainBottomBar extends StatelessWidget {
           icon: Icon(PhosphorIcons.regular.calendarBlank),
           label: 'Calendar',
         ),
+        BottomNavigationBarItem(
+          activeIcon: Icon(PhosphorIcons.fill.trophy),
+          icon: Icon(PhosphorIcons.regular.trophy),
+          label: 'Competition',
+        ),
       ],
     );
   }

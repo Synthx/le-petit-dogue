@@ -5,22 +5,24 @@ class StandingTableHeader {
   TableRow build(BuildContext context) {
     final textStyle = context.textTheme.displayLarge?.copyWith(
       color: context.primaryColor,
-      fontSize: 13,
+      fontSize: 11,
     );
 
     return TableRow(
       children: [
-        Container(),
+        const SizedBox(
+          height: 30,
+        ),
         Container(),
         Center(
           child: Text(
-            'Pts',
+            context.t.standingsTableHeaderGoalDifference,
             style: textStyle,
           ),
         ),
         Center(
           child: Text(
-            'Diff',
+            context.t.standingsTableHeaderPoints,
             style: textStyle,
           ),
         ),

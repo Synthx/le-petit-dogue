@@ -17,10 +17,11 @@ class DataStore extends Cubit<DataState> {
       matchService.findAll(),
       standingService.findAll(),
     ]);
+    (standings as List<Standing>).sort((a, b) => b.compareTo(a));
 
     emit(state.copyWith(
       matches: matches as List<Match>,
-      standings: standings as List<Standing>,
+      standings: standings,
     ));
   }
 }

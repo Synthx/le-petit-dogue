@@ -7,6 +7,8 @@ part 'standing.g.dart';
 
 @freezed
 class Standing with _$Standing {
+  const Standing._();
+
   const factory Standing({
     required int draw,
     required int goalDifference,
@@ -22,4 +24,18 @@ class Standing with _$Standing {
 
   factory Standing.fromJson(Map<String, dynamic> json) =>
       _$StandingFromJson(json);
+
+  int compareTo(Standing other) {
+    if (points != other.points) {
+      return points.compareTo(other.points);
+    }
+    if (goalDifference != other.goalDifference) {
+      return goalDifference.compareTo(other.goalDifference);
+    }
+    if (goalsFor != other.goalsFor) {
+      return goalsFor.compareTo(other.goalsFor);
+    }
+
+    return team.name.compareTo(other.team.name);
+  }
 }

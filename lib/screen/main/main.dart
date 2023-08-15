@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'main_bottom_bar.dart';
 
 export 'calendar/calendar.dart';
+export 'competition/competition.dart';
 export 'home/home.dart';
 export 'squad/squad.dart';
 

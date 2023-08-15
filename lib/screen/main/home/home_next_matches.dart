@@ -13,7 +13,9 @@ import 'home_store.dart';
 class HomeNextMatches extends StatelessWidget {
   const HomeNextMatches({super.key});
 
-  void _onMore({required BuildContext context}) {
+  void _onMore({
+    required BuildContext context,
+  }) {
     context.goNamed(CalendarScreen.name);
   }
 

@@ -36,6 +36,15 @@ final router = GoRouter(
                 ),
               ],
             ),
+            StatefulShellBranch(
+              routes: [
+                GoRoute(
+                  path: '/competition',
+                  name: CompetitionScreen.name,
+                  builder: (context, state) => const CompetitionScreen(),
+                ),
+              ],
+            ),
           ],
         ),
       ],

@@ -15,7 +15,7 @@ class StandingTableRow {
     final textStyle = context.textTheme.displayMedium?.copyWith(
       color: isFeatured ? context.primaryColor : context.secondaryColor,
       fontSize: 13,
-      fontWeight: isFeatured ? FontWeight.w500 : FontWeight.normal,
+      fontWeight: isFeatured ? FontWeight.bold : FontWeight.normal,
     );
 
     return TableRow(
@@ -28,18 +28,15 @@ class StandingTableRow {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 10,
-          ),
+        SizedBox(
+          height: 40,
           child: Row(
             children: [
               TeamCrest(
                 team: standing.team,
-                size: 30,
+                size: 24,
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 8),
               Text(
                 standing.team.shortName,
                 style: textStyle,
@@ -49,13 +46,15 @@ class StandingTableRow {
         ),
         Center(
           child: Text(
-            '${standing.points}',
-            style: textStyle,
+            '${standing.goalDifference}',
+            style: textStyle?.copyWith(
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         Center(
           child: Text(
-            '${standing.goalDifference}',
+            '${standing.points}',
             style: textStyle,
           ),
         ),
