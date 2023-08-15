@@ -1,5 +1,6 @@
 import { COMPETITION_ID } from "../constant";
 import { StandingResponse } from "../dto/standing-response";
+import { cleanTeam } from "../helper";
 import { http } from "../http";
 import { firestore } from "../index";
 
@@ -21,7 +22,7 @@ export const getStandings = async () => {
     const standingDocument = collection.doc(`${standing.team.id}`);
     batch.set(standingDocument, {
       position: standing.position,
-      team: standing.team,
+      team: cleanTeam(standing.team),
       playedGames: standing.playedGames,
       won: standing.won,
       draw: standing.draw,

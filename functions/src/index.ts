@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { Response } from "firebase-functions";
 import { setGlobalOptions } from "firebase-functions/v2";
-import { onRequest } from "firebase-functions/v2/https";
+import { onRequest, Request } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import * as moment from "moment";
 import { getMatches } from "./job/get-matches";
@@ -69,6 +70,9 @@ export const scheduledGetStandings = onSchedule(
 export const requestGetStandings = onRequest(
   { cors: "*" },
   async (request, response) => {
+    const valid = secureEndpoint(request, response);
+    if (!valid) return;
+
     await getStandings();
     response.json(true);
   },
@@ -77,7 +81,10 @@ export const requestGetStandings = onRequest(
 export const requestGetMatches = onRequest(
   { cors: "*" },
   async (request, response) => {
-    await getMatches(["SCHEDULED", "TIMED"]);
+    const valid = secureEndpoint(request, response);
+    if (!valid) return;
+
+    await getMatches();
     response.json(true);
   },
 );
@@ -85,7 +92,28 @@ export const requestGetMatches = onRequest(
 export const requestGetTeam = onRequest(
   { cors: "*" },
   async (request, response) => {
+    const valid = secureEndpoint(request, response);
+    if (!valid) return;
+
     await getTeam();
     response.json(true);
   },
 );
+
+const secureEndpoint = (request: Request, response: Response) => {
+  if (request.method !== "POST") {
+    response.status(405).json({ error: "Method Not Allowed" });
+    return false;
+  }
+
+  const token = request.header("Authorization");
+  if (!token) {
+    response.status(401).json({ error: "Unauthorized" });
+    return false;
+  } else if (token !== "Bearer " + process.env.SECRET_TOKEN) {
+    response.status(403).json({ error: "Forbidden" });
+    return false;
+  }
+
+  return true;
+};

@@ -1,6 +1,7 @@
 import { Moment } from "moment";
 import { COMPETITION_ID } from "../constant";
 import { MatchResponse } from "../dto/match-response";
+import { cleanTeam } from "../helper";
 import { http } from "../http";
 import { firestore } from "../index";
 import { MatchStatus } from "../model/match";
@@ -28,8 +29,8 @@ export const getMatches = async (statuses?: MatchStatus[], date?: Moment) => {
       status: match.status,
       date: new Date(match.utcDate),
       competition: match.competition,
-      home: match.homeTeam,
-      away: match.awayTeam,
+      home: cleanTeam(match.homeTeam),
+      away: cleanTeam(match.awayTeam),
       score: match.score,
     });
   }
