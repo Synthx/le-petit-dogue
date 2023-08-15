@@ -5,6 +5,14 @@
   "news": "Actualites",
   "seeMore": "Voir plus",
   "standings": "Classement",
+  "matchDay": "Journee {day}",
+  "@matchDay": {
+    "placeholders": {
+      "day": {
+        "type": "num"
+      }
+    }
+  },
   "lastMatch": "Dernier match",
   "upcomingMatch": "Prochain match",
   "position": "{position, plural, =1 {1er} other {{position}e}}",

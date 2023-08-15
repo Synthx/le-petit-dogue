@@ -17,9 +17,12 @@ final themeData = ThemeData(
     background: kBackgroundColor,
   ),
   dividerColor: kPrimaryColor,
-  appBarTheme: const AppBarTheme(
+  appBarTheme: AppBarTheme(
     centerTitle: false,
-    color: kBackgroundColor,
+    backgroundColor: kBackgroundColor,
+    surfaceTintColor: Colors.transparent,
+    shadowColor: Colors.black.withOpacity(0.4),
+    elevation: 1,
     titleSpacing: 0,
   ),
   tabBarTheme: const TabBarTheme(

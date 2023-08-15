@@ -1,12 +1,13 @@
 # TODO
 
-- [x] add next matches
-- [x] add results
-- [ ] add next competition matches
-- [ ] add competition results
-- [x] add standings
-- [ ] add standings legend rankings
-- [ ] add top scorer 
-- [ ] add away & home standings
+- [x] featured team next matches
+- [x] featured team results
+- [x] featured team standings
+- [x] competition calendar
+- [ ] competition top scorer
+- [ ] competition results
+- [ ] competition standings away & home
 - [ ] use only team short name (rename field)
-- [ ] add onboarding screen
+- [ ] onboarding screen
+- [ ] standings table legend rankings
+- [ ] featured team small card
