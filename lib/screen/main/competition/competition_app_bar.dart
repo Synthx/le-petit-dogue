@@ -27,6 +27,9 @@ class CompetitionAppBar extends StatelessWidget implements PreferredSizeWidget {
             Tab(
               text: context.t.calendar,
             ),
+            Tab(
+              text: context.t.results,
+            ),
           ],
         ),
       ),

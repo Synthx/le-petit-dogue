@@ -4,11 +4,11 @@ import 'package:jet_dogue/core/core.dart';
 import 'package:jet_dogue/theme/theme.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-import 'competition_calendar_store.dart';
+import 'competition_results_store.dart';
 
-class CompetitionCalendarMatchDay extends StatelessWidget
+class CompetitionResultsAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  const CompetitionCalendarMatchDay({super.key});
+  const CompetitionResultsAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -16,18 +16,18 @@ class CompetitionCalendarMatchDay extends StatelessWidget
   void _nextMatchDay({
     required BuildContext context,
   }) {
-    context.read<CompetitionCalendarStore>().nextMatchDay();
+    context.read<CompetitionResultsStore>().nextMatchDay();
   }
 
   void _previousMatchDay({
     required BuildContext context,
   }) {
-    context.read<CompetitionCalendarStore>().previousMatchDay();
+    context.read<CompetitionResultsStore>().previousMatchDay();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CompetitionCalendarStore, CompetitionCalendarState>(
+    return BlocBuilder<CompetitionResultsStore, CompetitionResultsState>(
       builder: (context, state) {
         final matchDay = state.matchDay;
         final matchDays = state.matches.keys;

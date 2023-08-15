@@ -2,19 +2,19 @@ import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jet_dogue/store/store.dart';
 
-import 'competition_calendar_state.dart';
+import 'competition_results_state.dart';
 
-export 'competition_calendar_state.dart';
+export 'competition_results_state.dart';
 
-class CompetitionCalendarStore extends Cubit<CompetitionCalendarState> {
+class CompetitionResultsStore extends Cubit<CompetitionResultsState> {
   final DataStore dataStore;
 
-  CompetitionCalendarStore({
+  CompetitionResultsStore({
     required this.dataStore,
-  }) : super(initialCompetitionCalendarState);
+  }) : super(initialCompetitionResultsState);
 
   Future init() async {
-    final matches = dataStore.state.matches.where((e) => !e.isFinished);
+    final matches = dataStore.state.matches.where((e) => e.isFinished);
     final data = groupBy(matches, (e) => e.matchday);
 
     emit(state.copyWith(
