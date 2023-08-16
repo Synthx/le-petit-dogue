@@ -4,6 +4,6 @@ final db = FirebaseFirestore.instance;
 
 void setupFirebase() {
   db.settings = const Settings(
-    persistenceEnabled: false,
+    persistenceEnabled: true,
   );
 }

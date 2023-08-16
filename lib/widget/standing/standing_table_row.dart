@@ -38,7 +38,7 @@ class StandingTableRow {
               ),
               const SizedBox(width: 8),
               Text(
-                standing.team.shortName,
+                standing.team.name,
                 style: textStyle,
               ),
             ],

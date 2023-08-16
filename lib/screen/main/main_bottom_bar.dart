@@ -20,9 +20,8 @@ class MainBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: navigationShell.currentIndex,
-      elevation: 1,
       iconSize: 30,
+      currentIndex: navigationShell.currentIndex,
       onTap: (index) => _onTap(index),
       items: [
         BottomNavigationBarItem(

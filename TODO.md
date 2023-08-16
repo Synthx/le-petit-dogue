@@ -5,9 +5,9 @@
 - [x] featured team standings
 - [x] competition calendar
 - [ ] competition top scorer
-- [ ] competition results
+- [x] competition results
 - [ ] competition standings away & home
-- [ ] use only team short name (rename field)
+- [x] use only team short name (rename field)
 - [ ] onboarding screen
 - [ ] standings table legend rankings
-- [ ] featured team small card
+- [x] featured team small card

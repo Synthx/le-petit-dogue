@@ -21,9 +21,16 @@ class CompetitionResultsMatches extends StatelessWidget {
             height: kSpacer,
           ),
           itemBuilder: (context, index) {
+            final match = matches[index];
+            if (match.isFeatured) {
+              return SmallFeaturedMatchCard(
+                match: match,
+              );
+            }
+
             return SmallMatchCard(
               backgroundColor: Theme.of(context).cardColor,
-              match: matches[index],
+              match: match,
             );
           },
         );

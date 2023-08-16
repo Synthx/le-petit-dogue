@@ -15,7 +15,9 @@ class NewsCard extends StatelessWidget {
 
   Future openNews() async {
     final uri = Uri.parse(news.link);
-    await launchUrl(uri);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
   }
 
   @override

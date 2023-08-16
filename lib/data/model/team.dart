@@ -9,6 +9,7 @@ class Team with _$Team {
   const factory Team({
     required int id,
     required String name,
+    required String fullName,
     required String shortName,
     required String tla,
   }) = _Team;

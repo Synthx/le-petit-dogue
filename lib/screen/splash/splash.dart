@@ -83,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           const SafeArea(
             child: Padding(
-              padding: EdgeInsets.all(kSpacer),
+              padding: EdgeInsets.all(kSafeArea),
               child: Column(
                 children: [
                   Image(

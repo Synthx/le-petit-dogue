@@ -6,8 +6,8 @@ import 'package:jet_dogue/screen/screen.dart';
 import 'package:jet_dogue/store/store.dart';
 import 'package:jet_dogue/theme/theme.dart';
 
-class JetDogue extends StatelessWidget {
-  const JetDogue({super.key});
+class LePetitDogue extends StatelessWidget {
+  const LePetitDogue({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class JetDogue extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        title: 'JetDogue',
+        title: 'Le Petit Dogue',
         debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
         theme: themeData,

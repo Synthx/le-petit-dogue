@@ -13,9 +13,7 @@ class DataState with _$DataState {
   }) = _DataState;
 
   List<Match> get featuredTeamMatches {
-    return matches.where((e) {
-      return e.home.id == kTeamId || e.away.id == kTeamId;
-    }).toList();
+    return matches.where((e) => e.isFeatured).toList();
   }
 }
 

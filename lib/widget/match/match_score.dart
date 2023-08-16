@@ -5,9 +5,11 @@ import 'package:jet_dogue/theme/theme.dart';
 
 class MatchScoreIndicator extends StatelessWidget {
   final MatchScore score;
+  final Color? color;
 
   const MatchScoreIndicator({
     required this.score,
+    this.color,
     super.key,
   });
 
@@ -30,7 +32,7 @@ class MatchScoreIndicator extends StatelessWidget {
           style: context.textTheme.titleLarge?.copyWith(
             color: score.winner == MatchScoreWinner.home
                 ? context.primaryColor
-                : context.secondaryColor,
+                : color ?? context.secondaryColor,
             fontSize: 34,
           ),
         ),
@@ -51,7 +53,7 @@ class MatchScoreIndicator extends StatelessWidget {
           style: context.textTheme.titleLarge?.copyWith(
             color: score.winner == MatchScoreWinner.away
                 ? context.primaryColor
-                : context.secondaryColor,
+                : color ?? context.secondaryColor,
             fontSize: 34,
           ),
         ),

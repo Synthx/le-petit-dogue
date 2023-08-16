@@ -18,6 +18,7 @@ class TeamCrest extends StatelessWidget {
       height: size,
       width: size,
       fit: BoxFit.contain,
+      semanticLabel: team.name,
     );
   }
 }

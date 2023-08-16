@@ -31,7 +31,7 @@ class SmallMatchCard extends StatelessWidget {
               ),
               children: [
                 TextSpan(
-                  text: match.home.shortName.toUpperCase(),
+                  text: match.home.name.toUpperCase(),
                 ),
                 TextSpan(
                   text: '  /  ',
@@ -40,7 +40,7 @@ class SmallMatchCard extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: match.away.shortName.toUpperCase(),
+                  text: match.away.name.toUpperCase(),
                 ),
               ],
             ),

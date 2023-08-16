@@ -13,5 +13,5 @@ void main() async {
   setupFirebase();
   setupInjector();
   Intl.defaultLocale = 'fr_FR';
-  runApp(const JetDogue());
+  runApp(const LePetitDogue());
 }

@@ -47,6 +47,7 @@ final themeData = ThemeData(
     indicatorSize: TabBarIndicatorSize.label,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    elevation: 1,
     backgroundColor: kBackgroundColor,
     selectedItemColor: kPrimaryColor,
     unselectedItemColor: kSecondaryColor,

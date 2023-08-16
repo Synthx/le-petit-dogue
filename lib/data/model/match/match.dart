@@ -43,5 +43,9 @@ class Match with _$Match {
     return status == MatchStatus.finished;
   }
 
+  bool get isFeatured {
+    return home.id == kTeamId || away.id == kTeamId;
+  }
+
   factory Match.fromJson(Map<String, dynamic> json) => _$MatchFromJson(json);
 }
