@@ -16,7 +16,6 @@ final themeData = ThemeData(
     secondary: kSecondaryColor,
     background: kBackgroundColor,
   ),
-  dividerColor: kPrimaryColor,
   appBarTheme: AppBarTheme(
     centerTitle: false,
     backgroundColor: kBackgroundColor,
@@ -56,6 +55,11 @@ final themeData = ThemeData(
   ),
   iconTheme: const IconThemeData(
     color: kBodyTextColor,
+  ),
+  dividerTheme: const DividerThemeData(
+    color: kPrimaryColor,
+    thickness: 2,
+    space: 0,
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(

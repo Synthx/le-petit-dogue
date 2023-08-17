@@ -2,6 +2,7 @@
   "@@locale": "fr",
   "calendar": "Calendrier",
   "results": "Résultats",
+  "squad": "Effectif",
   "news": "Actualites",
   "seeMore": "Voir plus",
   "standings": "Classement",
@@ -61,6 +62,13 @@
       }
     }
   },
+  "personPosition": "{position, select, goalkeeper {Gardien} defence {Défenseur} midfield {Milieu} offence {Attaquant} other {?}}",
+  "@personPosition": {
+    "placeholders": {
+      "position": {}
+    }
+  },
+  "standingsTableHeaderMatchDay": "J",
   "standingsTableHeaderGoalDifference": "DIFF",
   "standingsTableHeaderPoints": "PTS",
   "standingsTableLegendNote": "Si les équipes terminent à égalité de points à la fin de la saison, la différence de buts les départagera"

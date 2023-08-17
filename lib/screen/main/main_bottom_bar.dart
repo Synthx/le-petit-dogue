@@ -30,8 +30,8 @@ class MainBottomBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          activeIcon: Icon(PhosphorIcons.fill.calendarBlank),
-          icon: Icon(PhosphorIcons.regular.calendarBlank),
+          activeIcon: Icon(PhosphorIcons.fill.shield),
+          icon: Icon(PhosphorIcons.regular.shield),
           label: 'Calendar',
         ),
         BottomNavigationBarItem(

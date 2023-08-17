@@ -16,7 +16,7 @@ class HomeNextMatches extends StatelessWidget {
   void _onMore({
     required BuildContext context,
   }) {
-    context.goNamed(CalendarScreen.name);
+    context.goNamed(ClubScreen.name);
   }
 
   @override

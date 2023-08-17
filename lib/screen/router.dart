@@ -30,9 +30,9 @@ final router = GoRouter(
             StatefulShellBranch(
               routes: [
                 GoRoute(
-                  path: '/calendar',
-                  name: CalendarScreen.name,
-                  builder: (context, state) => const CalendarScreen(),
+                  path: '/club',
+                  name: ClubScreen.name,
+                  builder: (context, state) => const ClubScreen(),
                 ),
               ],
             ),
