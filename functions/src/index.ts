@@ -17,6 +17,9 @@ setGlobalOptions({
 const app = initializeApp();
 const timezone = "Europe/Paris";
 export const firestore = getFirestore(app);
+firestore.settings({
+  ignoreUndefinedProperties: true,
+});
 
 /**
  * scheduled jobs

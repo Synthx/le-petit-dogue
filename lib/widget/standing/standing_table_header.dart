@@ -16,6 +16,12 @@ class StandingTableHeader {
         Container(),
         Center(
           child: Text(
+            context.t.standingsTableHeaderMatchDay,
+            style: textStyle,
+          ),
+        ),
+        Center(
+          child: Text(
             context.t.standingsTableHeaderGoalDifference,
             style: textStyle,
           ),

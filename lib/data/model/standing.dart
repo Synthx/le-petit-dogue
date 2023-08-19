@@ -6,7 +6,7 @@ part 'standing.freezed.dart';
 part 'standing.g.dart';
 
 @freezed
-class Standing with _$Standing {
+class Standing with _$Standing implements Comparable<Standing> {
   const Standing._();
 
   const factory Standing({
@@ -25,6 +25,7 @@ class Standing with _$Standing {
   factory Standing.fromJson(Map<String, dynamic> json) =>
       _$StandingFromJson(json);
 
+  @override
   int compareTo(Standing other) {
     if (points != other.points) {
       return points.compareTo(other.points);

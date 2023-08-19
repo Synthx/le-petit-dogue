@@ -7,4 +7,5 @@ void setupInjector() {
   getIt.registerLazySingleton(() => MatchService());
   getIt.registerLazySingleton(() => NewsService());
   getIt.registerLazySingleton(() => StandingService());
+  getIt.registerLazySingleton(() => SquadService());
 }

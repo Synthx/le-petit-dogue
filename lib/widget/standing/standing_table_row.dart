@@ -36,12 +36,20 @@ class StandingTableRow {
                 team: standing.team,
                 size: 24,
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: 10),
               Text(
                 standing.team.name,
                 style: textStyle,
               ),
             ],
+          ),
+        ),
+        Center(
+          child: Text(
+            '${standing.playedGames}',
+            style: textStyle?.copyWith(
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
         Center(

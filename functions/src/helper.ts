@@ -1,3 +1,4 @@
+import { Person } from "./model/person";
 import { Team } from "./model/team";
 
 export const cleanTeam = (team: Team) => ({
@@ -27,4 +28,27 @@ export const TEAM_NAMES: { [id: number]: string } = {
   547: "Reims",
   548: "Monaco",
   576: "Strasbourg",
+};
+
+export const cleanPerson = (person: Person) => ({
+  id: person.id,
+  name: person.name,
+  position: person.position?.toUpperCase(),
+  dateOfBirth: new Date(person.dateOfBirth),
+  nationality: PERSON_NATIONALITY[person.nationality],
+});
+
+export const PERSON_NATIONALITY: { [nationality: string]: string } = {
+  Turkey: "TR",
+  France: "FR",
+  Brazil: "BR",
+  Portugal: "PT",
+  Cameroon: "CM",
+  Algeria: "DZ",
+  Sweden: "SE",
+  England: "GB",
+  Slovakia: "SK",
+  Canada: "CA",
+  Kosovo: "XK",
+  Guinea: "GN",
 };

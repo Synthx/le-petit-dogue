@@ -16,12 +16,9 @@ class MatchScoreIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (score.winner == null) {
-      return SizedBox(
+      return const SizedBox(
         width: 30,
-        child: Divider(
-          thickness: 2,
-          color: context.primaryColor,
-        ),
+        child: Divider(),
       );
     }
 
@@ -36,16 +33,13 @@ class MatchScoreIndicator extends StatelessWidget {
             fontSize: 34,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
+        const Padding(
+          padding: EdgeInsets.symmetric(
             horizontal: kSpacer,
           ),
           child: SizedBox(
             width: 20,
-            child: Divider(
-              thickness: 2,
-              color: context.primaryColor,
-            ),
+            child: Divider(),
           ),
         ),
         Text(

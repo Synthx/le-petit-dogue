@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jet_dogue/core/core.dart';
 import 'package:jet_dogue/data/data.dart';
+import 'package:jet_dogue/widget/widget.dart';
 
 class PersonCard extends StatelessWidget {
   final Person person;
@@ -12,25 +14,59 @@ class PersonCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      color: Colors.white,
+      child: Stack(
         children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'data',
-                textAlign: TextAlign.right,
+          Positioned.fill(
+            child: Center(
+              child: PersonPicture(
+                person: person,
               ),
-            ],
+            ),
           ),
-          Text(
-            person.name,
-            textAlign: TextAlign.left,
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              color: Colors.white,
+              padding: const EdgeInsets.only(
+                top: 10,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    '18',
+                    style: context.textTheme.titleMedium?.copyWith(
+                      color: context.primaryColor,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
+                    child: SizedBox(
+                      height: 25,
+                      child: VerticalDivider(),
+                    ),
+                  ),
+                  Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          person.name,
+                          style: context.textTheme.bodyMedium?.copyWith(),
+                        ),
+                        Text(
+                          context.t.personPosition(person.position.name),
+                          style: context.textTheme.bodySmall?.copyWith(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

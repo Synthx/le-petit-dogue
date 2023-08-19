@@ -25,6 +25,7 @@ class StandingTable extends StatelessWidget {
         1: FlexColumnWidth(),
         2: FixedColumnWidth(40),
         3: FixedColumnWidth(40),
+        4: FixedColumnWidth(40),
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: [
